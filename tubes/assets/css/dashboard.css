@@ -1,0 +1,73 @@
+
+
+.item{	
+	margin-top: 50px;
+	width: 20%;
+	background-color: #FFFF;
+	margin-left: 4%;
+	float: left;
+	padding: 10px 10px 10px 10px;
+	position: relative;		
+}
+
+.icon-user{	
+	display: table;
+	border-radius: 50%;	
+	margin: 0 auto;	
+	margin-top: -40px;
+
+}
+
+.data-user{		
+	font: 16px, sans-serif;
+	font-size: 20px;
+	display: table;	
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.data{
+	font-size: 60px;
+}
+
+.guru{
+	background-image: linear-gradient(#d4561f, #46A2CF) !important;
+}
+.siswa{
+	background-image: linear-gradient(#CAD0FC, #D46d72) !important;
+}
+.mapel{
+	background-image: linear-gradient(#a7acd1, #175e76) !important;
+}
+.kelas{
+	background-image: linear-gradient(#CAD0FC, #eab676) !important;	
+}
+
+.info{
+	width: 100%;
+	height: 100%;
+	margin-bottom: 120px;
+}
+
+.left-item{	
+	width: 47%;	
+	background-color: #7784E9;
+	color: white;
+	float: left;
+	font-size: 50px;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;	
+	box-shadow: 2px 2px 2px rgba(0, 0, 0,0.3);
+}
+
+.right-item{	
+	width: 47%;	
+	color: white;
+	background-color: #7784E9;
+	float: right;
+	font-size: 50px;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;	
+	box-shadow: 2px 2px 2px rgba(0, 0, 0,0.3);
+}

@@ -1,0 +1,67 @@
+/* Warna Background */
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+  background-color:#2187ab;
+}
+
+/* Login Form */
+.login-container{
+	width: 325px;
+	height: 390px;		
+	background: #FEFFFF !important;
+	background-size: 100%; 	
+	padding: 52px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  border-radius: 5%;
+}
+
+#icon{
+	width: 155px;	
+}
+
+.admin-icon{
+    display: table;
+    margin: 0 auto; 
+    border-radius: 30%;
+    background-color: white; 
+}
+
+h4 {
+  text-align: center;
+  font-family: 'Lucida Sans';
+}
+
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;    
+  outline: none;
+
+}
+
+input[type=text]:focus,  input[type=password]:focus {
+  border: 3px solid #66b6d2;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #3ba1c5;
+  color: #FEFFFF;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
