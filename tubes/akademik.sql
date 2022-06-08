@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 06:38 PM
+-- Generation Time: Jun 08, 2022 at 07:16 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -71,9 +71,11 @@ CREATE TABLE `tbl_jadwal` (
 --
 
 INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_guru`, `id_mapel`, `id_kelas`, `hari`, `jam_masuk`, `jam_keluar`) VALUES
-(26, 27, 1, 1, 'Senin', '20:07:03', '21:07:07'),
-(27, 28, 10, 1, 'Senin', '09:32:10', '12:33:31'),
-(28, 2, 12, 1, 'Selasa', '10:33:25', '12:34:36');
+(26, 27, 1, 1, 'Senin', '08:07:03', '11:30:00'),
+(29, 28, 2, 1, 'Selasa', '10:30:00', '12:00:00'),
+(30, 8, 13, 1, 'Rabu', '07:00:00', '12:00:00'),
+(31, 2, 11, 1, 'Kamis', '07:00:00', '10:00:00'),
+(32, 25, 16, 1, 'Jumat', '07:00:00', '10:00:00');
 
 -- --------------------------------------------------------
 
@@ -141,11 +143,11 @@ CREATE TABLE `tbl_mengajar` (
 --
 
 INSERT INTO `tbl_mengajar` (`id_mengajar`, `id_guru`, `id_mapel`) VALUES
-(33, 25, 1),
-(36, 2, 1),
 (37, 27, 1),
-(38, 28, 10),
-(39, 2, 12);
+(40, 28, 2),
+(41, 8, 13),
+(42, 2, 11),
+(43, 25, 16);
 
 -- --------------------------------------------------------
 
@@ -258,7 +260,7 @@ ALTER TABLE `tbl_guru`
 -- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tbl_kelas`
@@ -276,7 +278,7 @@ ALTER TABLE `tbl_mapel`
 -- AUTO_INCREMENT for table `tbl_mengajar`
 --
 ALTER TABLE `tbl_mengajar`
-  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `tbl_siswa`

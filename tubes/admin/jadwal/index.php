@@ -11,42 +11,23 @@
 	<div class="tabel-heading">
 		Data Jadwal Mengajar		
 	</div>
+	<div class="button-container">
+	
+	<button class="button-input" id="myBtn" onclick="show_modal(0)" >
+	<i class="fa fa-plus" aria-hidden="true"></i> Tambah Data
+	</button>
+
+</div>
 	<div class="search-box">		
-		<form method="get" action="#">
-			<input type="hidden" name="page" value="jadwal_mengajar">
-			<label for="fguru">Guru: <input list="guru" name="guru" type="text">
-			</label>
-			<datalist id="guru">
-			
-			<?php
-			include "../config/koneksi.php";
-			
-			$sql = "SELECT * from tbl_guru";
-			$result = mysqli_query($conn, $sql);
-			if (mysqli_num_rows($result) > 0) {				
-		    	while($row = mysqli_fetch_assoc($result)) {		    	
-			?>
-				<option value="<?php echo $row['id_guru']?>">
-					<?php echo $row['nama_guru']?>
-				</option>
-			<?php				
-		    	}
-			} 						
-			?>			 
-			</datalist>	
-			<button class="button-input" id="myBtn" type="submit">
+		<form method="GET" action="" autocomplete="off">
+		<input type="hidden" name="page" value="jadwal_mengajar">
+			<input type="text" name="keyword">
+			<button class="button-input" id="myBtn" type="submit" name="cari">
 			<i class="fa fa-search" aria-hidden="true"></i>Cari
-		</button>
+			</button>
+			<br><br>
 		</form>				
 	</div>
-	<div class="data-result">
-		<div class="button-container">
-	
-			<button class="button-input" id="myBtn" onclick="show_modal(0)" >
-			<i class="fa fa-plus" aria-hidden="true"></i> Tambah Data
-			</button>
-		
-		</div>
 	<table id="list-data" class="display">	
 		<thead>
 			<tr>
@@ -60,26 +41,32 @@
 		</thead>
 		<!-- Kode untuk mengambil data guru -->
 		<?php		
-			$id_guru = "''";
-			if(isset($_GET['guru'])){
-				$id_guru = $_GET['guru'];
-			}
+			include "../config/koneksi.php";
+			if(isset($_GET['cari'])){
+				$keyword = $_GET['keyword'];
 			
 			$sql = "SELECT * from tbl_guru as g
-						INNER JOIN tbl_mengajar as me ON  g.id_guru = ".$id_guru." AND g.id_guru = me.id_guru
+						INNER JOIN tbl_mengajar as me ON g.id_guru = me.id_guru
 						INNER JOIN tbl_mapel as m ON m.id_mapel = me.id_mapel
 						INNER JOIN tbl_jadwal as j ON j.id_mapel = me.id_mapel AND j.id_guru = g.id_guru
 						INNER JOIN tbl_kelas as k ON k.id_kelas = j.id_kelas
-					
+						WHERE
+						nama_guru LIKE '%$keyword%' OR
+						nama_mapel LIKE '%$keyword%' OR
+						hari LIKE '%$keyword%' OR
+						nama_kelas LIKE '%$keyword%'";
+			} else {
+			$sql = "SELECT * from tbl_guru as g
+						INNER JOIN tbl_mengajar as me ON g.id_guru = me.id_guru
+						INNER JOIN tbl_mapel as m ON m.id_mapel = me.id_mapel
+						INNER JOIN tbl_jadwal as j ON j.id_mapel = me.id_mapel AND j.id_guru = g.id_guru
+						INNER JOIN tbl_kelas as k ON k.id_kelas = j.id_kelas	
 						ORDER BY FIELD(j.Hari, 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu','minggu')";										
-						
-			$result = mysqli_query($conn, $sql);
-			$count = mysqli_num_rows($result);
-
-
+			}
+			$result = $conn -> query($sql)or die(mysqli_error($conn));
 			if (mysqli_num_rows($result) > 0) {
 				$i = 1;
-		    	while($row = mysqli_fetch_assoc($result)) {		    	
+		    	while($row = mysqli_fetch_assoc($result)) {	    	
 		?>
 				<!-- Menampilkan Data guru -->
 		        <tr>
@@ -171,7 +158,7 @@
 	</table>
 	</div>
 	<div style="clear: both;"></div>
-</div>
+
 
 <!-- Get Data guru, Mapel, Kelas -->
 <?php
