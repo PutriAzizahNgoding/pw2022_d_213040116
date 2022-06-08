@@ -3,10 +3,7 @@
 	if(!isset($_GET['page'])){
 		include "../session_check.php";
 	}
-	
-	if(isset($_GET['status'])){
-		echo '<script>alert("Data Gagal Ditambahkan!")</script>'; 
-	}
+
 ?>
 
 <!-- Tabel Data Jadwal Mengajar -->
@@ -106,41 +103,40 @@
 		        	</td>		                
 		        </tr>
 
-		        <!-- Modal Update Data -->
-				<div id="myModal<?php echo $i?>" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-					    <div class="modal-header">
-					      <span class="close" id="close<?php echo $i?>">&times;</span>
-					      <h2>Update Jadwal Mengajar</h2>
-					      <hr>
+		  <!-- Modal Update Data -->
+			<div id="myModal<?php echo $i?>" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					 <div class="modal-header">
+					    <span class="close" id="close<?php echo $i?>">&times;</span>
+					    <h2>Update Jadwal Mengajar</h2>
+					    <hr>
 					    </div>
 					    <div class="modal-body">
 					    	<form name="input" method="post" action="jadwal/jadwal_update.php">
 					    		<!-- id_jadwal Sebelumnya -->
-						      	<input type="hidden" name="id_lama" value="<?php echo $row['id_jadwal']?>">						      	
-						      	<!-- Nama guru -->
-								<label for="id">Nama Guru</label>
-								<input type="text" id="fid" value="<?php echo $row['nama_guru']?>" required>
-								<!-- Nama Mapel -->
-								<label for="nama">Nama Mata Pelajaran</label>
-								<input type="text" id="nama" list="mapel" name="mapel" value="<?php echo $row['id_mapel']?>" required>
-								<!-- Hari -->
-								<label for="fnama">Hari</label>
-								<input type="text" id="fnama" list="hari" name="hari" value="<?php echo $row['hari']?>" required>
-								<datalist id="hari">
-									<option value="Senin"></option>
-									<option value="Selasa"></option>
-									<option value="Rabu"></option>
-									<option value="Kamis"></option>
-									<option value="Jumat"></option>
-									<option value="Sabtu"></option>	
-                                   									
-								</datalist>
+						    <input type="hidden" name="id_lama" value="<?php echo $row['id_jadwal']?>">						      	
+						    <!-- Nama guru -->
+							<label for="id">Nama Guru</label>
+							<input type="text" id="fid" value="<?php echo $row['nama_guru']?>" required>
+							<!-- Nama Mapel -->
+							<label for="nama">Nama Mata Pelajaran</label>
+							<input type="text" id="nama" list="mapel" name="mapel" value="<?php echo $row['id_mapel']?>" required>
+							<!-- Hari -->
+							<label for="fnama">Hari</label>
+							<input type="text" id="fnama" list="hari" name="hari" value="<?php echo $row['hari']?>" required>
+							<datalist id="hari">
+								<option value="Senin"></option>
+								<option value="Selasa"></option>
+								<option value="Rabu"></option>
+								<option value="Kamis"></option>
+								<option value="Jumat"></option>
+								<option value="Sabtu"></option>	       									
+							</datalist>
 								<!-- kelas -->
-								<label for="kelas">Kelas <input list="kelas" name="kelas" type="text" value="<?php echo $row['id_kelas']?>">
-								</label>
-								<datalist id="kelas" >
+							<label for="kelas">Kelas <input list="kelas" name="kelas" type="text" value="<?php echo $row['id_kelas']?>">
+							</label>
+							<datalist id="kelas" >
 									<!-- Select Data Kelas -->
 									<?php					
 									$sql_r = "SELECT * from tbl_kelas";
@@ -155,9 +151,9 @@
 								    	}
 									} 												
 									?>			 
-								</datalist>			
-								<!-- Jam -->
-								<label for="fjam">Jam</label>
+							</datalist>			
+							<!-- Jam -->
+							<label for="fjam">Jam</label>
 								<br>
 								<input type="time" name="j_masuk" step="1" value="<?php echo $row['jam_masuk']?>"> - <input type="time" name="j_keluar" step="1" value="<?php echo $row['jam_keluar']?>">
 								<input type="submit" value="Update">
@@ -165,7 +161,7 @@
 					    </div>    
 					</div>
 				</div>
-		<?php							
+			<?php							
 				$i++;
 		    	}
 			} 			
@@ -208,10 +204,10 @@
 		<datalist id="guru">
 		<!-- Select Data guru -->
 		<?php
-		while($l_guru = mysqli_fetch_assoc($guru)) {		    	
+		while($ambil_guru = mysqli_fetch_assoc($guru)) {		    	
 		?>
-			<option value="<?php echo $l_guru['id_guru']?>">
-				<?php echo $l_guru['nama_guru']?>
+			<option value="<?php echo $ambil_guru['id_guru']?>">
+				<?php echo $ambil_guru['nama_guru']?>
 			</option>
 		<?php					    	
 		} 						
@@ -223,10 +219,10 @@
 		<datalist id="mapel">
 		<!-- Select Data Mata Pelajaran -->
 		<?php			
-		while($l_mapel = mysqli_fetch_assoc($mapel)) {
+		while($ambil_mapel = mysqli_fetch_assoc($mapel)) {
 		?>
-			<option value="<?php echo $l_mapel['id_mapel']?>">
-				<?php echo $l_mapel['nama_mapel']?>
+			<option value="<?php echo $ambil_mapel['id_mapel']?>">
+				<?php echo $ambil_mapel['nama_mapel']?>
 			</option>
 		<?php					    	
 		} 						
@@ -238,10 +234,10 @@
 		<datalist id="kelas">
 		<!-- Select Data Kelas -->
 		<?php						
-	    while($l_kelas = mysqli_fetch_assoc($kelas)) {		    	
+	    while($ambil_kelas = mysqli_fetch_assoc($kelas)) {		    	
 		?>
-			<option value="<?php echo $l_kelas['id_kelas']?>">
-				<?php echo $l_kelas['nama_kelas']?>
+			<option value="<?php echo $ambil_kelas['id_kelas']?>">
+				<?php echo $ambil_kelas['nama_kelas']?>
 			</option>
 		<?php					    	
 		} 						

@@ -8,11 +8,13 @@
 
         if($conn->query($sql) === TRUE) {
 		
-            header("location:../halaman_admin.php?page=mapel");
+            echo "<script>alert('Data berhasil dihapus!'); 
+            window.location.href='../halaman_admin.php?page=mapel';</script>";
          
         } else {
 		
-			echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "<script>alert('Data gagal dihapus!'); 
+            window.location.href='../halaman_admin.php?page=mapel';</script>";
         
         }
     }

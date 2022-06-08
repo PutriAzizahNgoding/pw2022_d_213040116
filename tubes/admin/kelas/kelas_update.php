@@ -13,9 +13,11 @@
     $result = $conn -> query($query)or die(mysqli_error($conn));
 
     if($result) {
-        header("location:../halaman_admin.php?page=kelas");
+        echo "<script>alert('Data berhasil diubah!'); 
+        window.location.href='../halaman_admin.php?page=kelas';</script>";
     }else {
-        header("location:../halaman_admin?page=kelas&status=error");
+        echo "<script>alert('Data gagal dihapus!'); 
+            window.location.href='../halaman_admin.php?page=kelas';</script>";
 
     }
 

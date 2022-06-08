@@ -1,8 +1,5 @@
 <?php  
 session_start();
-if(isset($_SESSION['salah'])) {
-    echo '<script>alert("Username atau Password yang Anda masukkan salah")<script>';
-}
 
 ?>
 
@@ -23,7 +20,7 @@ if(isset($_SESSION['salah'])) {
         </div>
         <h4>Silahkan Login Terlebih Dahulu</h4>    
     <div class="admin-login-form">
-        <form name="login" method="POST" action="login_valid.php" autocomplete="off">
+        <form method="POST" action="login_valid.php" autocomplete="off">
             <div>
                 <input type="text" name="username" placeholder="Username" required>
             </div>

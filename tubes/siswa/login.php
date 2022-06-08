@@ -1,8 +1,5 @@
 <?php  
 session_start();
-if(isset($_SESSION['salah'])) {
-    echo '<script>alert("Username atau Password yang Anda masukkan salah")<script>';
-}
 
 ?>
 

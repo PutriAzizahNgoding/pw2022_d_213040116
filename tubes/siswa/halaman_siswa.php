@@ -27,6 +27,8 @@
                 </div>
                 <h3 class="menu-heading">Dashboard</h3>
                 <a href="?page=dashboard"><i class="fa fa-user-o fa-icon" aria-hidden="true"></i>Dashboard</a>
+                <h3 class="menu-heading">Profil Siswa</h3>
+                <a href="?page=profil"><i class="fa fa-user-o fa-icon" aria-hidden="true"></i>Profil Siswa</a>
             </div>
             <div class="page-content">
 			<div class="content-header">
@@ -45,11 +47,16 @@
                     if(isset($_GET['page'])) {
                         $page = $_GET['page'];
                         switch($page) {
-                        case "dashboard";
+                        case "dashboard":
                             include "dashboard.php";
                             break;
+                        case "profil":
+                            include "index.php";
+                            break;
                         }
+
                     }
+        
                 
                 ?>
             </div>

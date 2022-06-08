@@ -4,11 +4,6 @@
 		include "../session_check.php";
 	}
 
-	if(isset($_GET['status'])){
-		echo "<script>
-		alert('Data Gagal ditambahkan!');
-	</script>";
-	}
 ?>
 
 <!-- Tabel Data Guru -->

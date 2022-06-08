@@ -20,11 +20,12 @@
     $result = $conn->query($query) or die(mysqli_error($conn));
 
     if($result) {
-        header("location:../halaman_admin.php?page=siswa");
-
+        echo "<script>alert('Data berhasil ditambahkan!'); 
+        window.location.href='../halaman_admin.php?page=siswa';</script>";
 
     } else {
-        header("location:../halaman_admin.php?page=siswa&status=error"); 
+        echo "<script>alert('Data gagal ditambahkan!'); 
+        window.location.href='../halaman_admin.php?page=siswa';</script>"; 
 
     }
 

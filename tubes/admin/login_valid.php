@@ -9,13 +9,14 @@ $query = "SELECT * FROM tbl_user WHERE username='$username' AND password='$passw
 
 $result = $conn ->query($query);
 
-if($row = $result -> fetch_row()) {
+    if($row = $result -> fetch_row()) {
     $_SESSION['logged-in'] = true;
     $_SESSION['username'] = $username;
-    header('Location: halaman_admin.php?page=dashboard');
+    echo "<script>alert('Berhasil Login!'); window.location.href='halaman_admin.php?page=dashboard';</script>";
+    // header('Location: halaman_admin.php?page=dashboard');
 } else {
-    $_SESSION['salah'] = 'salah';
-    header('Location: login.php');
+    echo "<script>alert('Gagal Login!'); window.location.href='login.php';</script>";
+   
 }
 
 

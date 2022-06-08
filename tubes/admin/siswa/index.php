@@ -1,8 +1,4 @@
-
 <?php
-	if(isset($_GET['status'])){
-		echo '<script>alert("Data Gagal Ditambahkan!")</script>'; 
-	}
 	include "../config/koneksi.php";
 	
 	// Cek session
@@ -86,47 +82,47 @@
 		        	</td>		        	
 		        </tr>
 
-		        <!-- Modal Update Data -->
-				<div id="myModal<?php echo $i?>" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-					    <div class="modal-header">
-					      <span class="close" id="close<?php echo $i?>">&times;</span>
-					      <h2>Update Data Siswa</h2>
-					      <hr>
-					    </div>
-					<div class="modal-body">
-					    <form name="input" method="post" action="siswa/siswa_update.php" enctype="multipart/form-data" autocomplete="off">
-                            <input type="hidden" name="fotoLamaSiswa" value="<?= $row['foto_siswa'];?>">
-							<input type="hidden" name="nis_lama" value="<?= $row['nis'];?>">    						      	
-                            <label for="nis">NIS</label>
-                            <input type="text" id="nis" name="nis" value="<?= $row['nis']?>" maxlength="10" required>
-                            <label for="nama">Nama Siswa</label>
-                            <input type="text" id="nama" name="nama_siswa" value="<?= $row['nama_siswa']?>" required>
-                            <label for="jenis_kelamin">Jenis Kelamin</label><br>
-                            <input type="radio" name="jenis_kelamin" value="<?= $row["jenis_kelamin"];?>"  checked> Wanita 
-                            <input type="radio" name="jenis_kelamin" value="<?= $row["jenis_kelamin"];?>" > Pria	<br>
-                            <label for="alamat">Alamat</label>
-                            <input type="text" id="alamat" name="alamat" value="<?= $row["alamat"];?>">
+		    <!-- Modal Update Data -->
+			<div id="myModal<?php echo $i?>" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+				 <div class="modal-header">
+					 <span class="close" id="close<?php echo $i?>">&times;</span>
+					 <h2>Update Data Siswa</h2>
+					 <hr>
+					 </div>
+				 <div class="modal-body">
+					 <form name="input" method="post" action="siswa/siswa_update.php" enctype="multipart/form-data" autocomplete="off">
+                        <input type="hidden" name="fotoLamaSiswa" value="<?= $row['foto_siswa'];?>">
+						<input type="hidden" name="nis_lama" value="<?= $row['nis'];?>">    						      	
+                        <label for="nis">NIS</label>
+                        <input type="text" id="nis" name="nis" value="<?= $row['nis']?>" maxlength="10" required>
+                        <label for="nama">Nama Siswa</label>
+                        <input type="text" id="nama" name="nama_siswa" value="<?= $row['nama_siswa']?>" required>
+                        <label for="jenis_kelamin">Jenis Kelamin</label><br>
+                        <input type="radio" name="jenis_kelamin" value="<?= $row["jenis_kelamin"];?>"  checked> Wanita 
+                        <input type="radio" name="jenis_kelamin" value="<?= $row["jenis_kelamin"];?>" > Pria	<br>
+                        <label for="alamat">Alamat</label>
+                        <input type="text" id="alamat" name="alamat" value="<?= $row["alamat"];?>">
                             <!-- Data Kelas -->
-                            <label for="kelas">Kelas <input list="kelas" name="kelas" type="text" value="<?php echo $row['id_kelas']?>">
-								</label>
-								<datalist id="kelas" >
+                        <label for="kelas">Kelas <input list="kelas" name="kelas" type="text" value="<?php echo $row['id_kelas']?>">
+							</label>
+							<datalist id="kelas" >
 									<!-- Select Data Kelas -->
-									<?php					
-									$sql_r = "SELECT * from tbl_kelas";
-									$result_r = mysqli_query($conn, $sql_r);
-									if (mysqli_num_rows($result_r) > 0) {				
-								    	while($row_r = mysqli_fetch_assoc($result_r)) {		    	
-									?>
-										<option value="<?php echo $row_r['id_kelas']?>">
-											<?php echo $row_r['nama_kelas']?>
-										</option>
+								<?php					
+								$sql_k = "SELECT * from tbl_kelas";
+								$result_k = mysqli_query($conn, $sql_k);
+								if (mysqli_num_rows($result_k) > 0) {				
+								    	while($row_k = mysqli_fetch_assoc($result_k)) {		    	
+								?>
+								<option value="<?php echo $row_k['id_kelas']?>">
+									<?php echo $row_k['nama_kelas']?>
+									</option>
 									<?php				
-								    	}
+									}
 									} 												
 									?>			 
-								</datalist>	
+							</datalist>	
                             <label for="pass">Password</label>
                             <input type="password" id="pass" name="password" value="<?= $row["password_siswa"];?>"  required>
                             <label for="foto_siswa">Foto</label><br>
@@ -185,10 +181,10 @@
 		<datalist id="kelas">
 		<!-- Select Data Kelas -->
 		<?php						
-	    while($l_kelas = mysqli_fetch_assoc($kelas)) {		    	
+	    while($ambil_kelas = mysqli_fetch_assoc($kelas)) {		    	
 		?>
-			<option value="<?php echo $l_kelas['id_kelas']?>">
-				<?php echo $l_kelas['nama_kelas']?>
+			<option value="<?php echo $ambil_kelas['id_kelas']?>">
+				<?php echo $ambil_kelas['nama_kelas']?>
 			</option>
 		<?php					    	
 		} 						

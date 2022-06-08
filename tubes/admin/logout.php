@@ -1,4 +1,4 @@
 <?php
 	session_destroy();
-	header('Location: login.php');		
+	echo "<script>alert('Berhasil Keluar!'); window.location.href='login.php';</script>";		
 ?>

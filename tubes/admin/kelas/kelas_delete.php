@@ -7,12 +7,13 @@
         $sql = "DELETE FROM tbl_kelas WHERE id_kelas = '$id'" or die(mysqli_error($conn));
 
         if($conn->query($sql) === TRUE) {
-		
-            header("location:../halaman_admin.php?page=kelas");
+            echo "<script>alert('Data berhasil dihapus!'); 
+            window.location.href='../halaman_admin.php?page=kelas';</script>";
          
         } else {
 		
-			echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "<script>alert('Data gagal dihapus!'); 
+            window.location.href='../halaman_admin.php?page=kelas';</script>";
         
         }
     }

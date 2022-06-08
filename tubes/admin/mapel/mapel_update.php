@@ -15,9 +15,11 @@
     $result = $conn -> query($query)or die(mysqli_error($conn));
 
     if($result) {
-        header("location:../halaman_admin.php?page=mapel");
+        echo "<script>alert('Data berhasil diubah!'); 
+        window.location.href='../halaman_admin.php?page=mapel';</script>";
     }else {
-        header("location:../halaman_admin?page=mapel&status=error");
+        echo "<script>alert('Data berhasil diubah!'); 
+        window.location.href='../halaman_admin.php?page=mapel';</script>";
 
     }
 

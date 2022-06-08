@@ -29,9 +29,11 @@
     $result = $conn -> query($query)or die(mysqli_error($conn));
 
     if($result) {
-        header("location:../halaman_admin.php?page=guru");
+        echo "<script>alert('Data berhasil diubah!'); 
+        window.location.href='../halaman_admin.php?page=guru';</script>";
     }else {
-        header("location:../halaman_admin?page=guru&status=error");
+        echo "<script>alert('Data gagal diubah!'); 
+        window.location.href='../halaman_admin.php?page=guru';</script>";
 
     }
 

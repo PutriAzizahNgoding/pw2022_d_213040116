@@ -9,11 +9,13 @@
 
         if($conn->query($sql) === TRUE) {
 		
-            header("location:../halaman_admin.php?page=guru");
+            echo "<script>alert('Data Berhasil dihapus!'); 
+        window.location.href='../halaman_admin.php?page=guru';</script>";
          
         } else {
 		
-			echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "<script>alert('Data Gagal dihapus!'); 
+            window.location.href='../halaman_admin.php?page=guru';</script>";
         
         }
     }

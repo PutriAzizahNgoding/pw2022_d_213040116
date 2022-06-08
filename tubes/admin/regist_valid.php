@@ -50,7 +50,7 @@ if(empty($username) || empty($password2) || empty($password2) ) {
 
     // jika username & password sudah sesuai
     // enkripsi password
-    // $password_baru = password_hash($password, PASSWORD_DEFAULT);
+    $password_baru = password_hash($password, PASSWORD_DEFAULT);
     // Insert ke tabel user
     $query = "INSERT INTO tbl_user VALUES(null,'$username','$password_baru')
     ";

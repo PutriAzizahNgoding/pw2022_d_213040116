@@ -4,12 +4,6 @@
 		include "../session_check.php";
 	}
 
-	if(isset($_POST['status'])){
-		echo "<script>
-		alert('Data Gagal ditambahkan!');
-	</script>";
-	}
-
 
 ?>
 

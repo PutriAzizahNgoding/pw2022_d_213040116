@@ -25,9 +25,11 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:../halaman_admin.php?page=siswa");		
+		echo "<script>alert('Data berhasil diubah!'); 
+        window.location.href='../halaman_admin.php?page=siswa';</script>";		
 	}
 	else{		
-		header("location:../halaman_admin.php?page=siswa&status=error"); 		
+		echo "<script>alert('Data gagal diubah!'); 
+        window.location.href='../halaman_admin.php?page=siswa';</script>";		
 	}	
 ?>

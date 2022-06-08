@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2022 at 12:53 PM
+-- Generation Time: Jun 08, 2022 at 06:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -71,8 +71,9 @@ CREATE TABLE `tbl_jadwal` (
 --
 
 INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_guru`, `id_mapel`, `id_kelas`, `hari`, `jam_masuk`, `jam_keluar`) VALUES
-(22, 25, 1, 2, 'Senin', '07:30:22', '10:32:36'),
-(23, 27, 2, 1, 'Selasa', '09:31:57', '12:35:09');
+(26, 27, 1, 1, 'Senin', '20:07:03', '21:07:07'),
+(27, 28, 10, 1, 'Senin', '09:32:10', '12:33:31'),
+(28, 2, 12, 1, 'Selasa', '10:33:25', '12:34:36');
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,7 @@ INSERT INTO `tbl_kelas` (`id_kelas`, `kode_kelas`, `nama_kelas`) VALUES
 (1, 'KLS-001', 'VII-A'),
 (2, 'KLS-002', 'VII-B'),
 (3, 'KLS-003', 'VII-C'),
-(4, 'KLS-004', 'VII-D');
+(12, 'KLS-004', 'VII-D');
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,7 @@ INSERT INTO `tbl_mapel` (`id_mapel`, `kode_mapel`, `nama_mapel`, `semester`) VAL
 (11, 'MP-005', 'Matematika', 1),
 (12, 'MP-006', 'Ilmu Pengetahuan Alam', 1),
 (13, 'MP-007', 'Ilmu Pengetahuan Sosial', 1),
-(15, 'MP-008', 'Seni Budaya', 1);
+(16, 'MP-008', 'Seni Budaya ', 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,10 @@ CREATE TABLE `tbl_mengajar` (
 
 INSERT INTO `tbl_mengajar` (`id_mengajar`, `id_guru`, `id_mapel`) VALUES
 (33, 25, 1),
-(34, 27, 2);
+(36, 2, 1),
+(37, 27, 1),
+(38, 28, 10),
+(39, 2, 12);
 
 -- --------------------------------------------------------
 
@@ -166,7 +170,7 @@ CREATE TABLE `tbl_siswa` (
 
 INSERT INTO `tbl_siswa` (`id_siswa`, `nis`, `nama_siswa`, `jenis_kelamin`, `alamat`, `id_kelas`, `foto_siswa`, `password_siswa`) VALUES
 (13, '1819024367', 'Fitriani', 'wanita', 'Jalan Gerlong', 1, '629dd50204b5e.png', '1234'),
-(16, '1819025361', 'Febri Putra', 'pria', 'Jalan Tamansari', 1, '629dd9998caf8.png', 'FEBRI');
+(16, '1819025361', 'Febri Putra', 'pria', 'Jalan Tamansari', 1, '629dd9998caf8.png', 'febri');
 
 -- --------------------------------------------------------
 
@@ -185,7 +189,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`) VALUES
-(1, 'putri', '123');
+(1, 'putri', '123'),
+(23, 'ika', '$2y$10$8DDp8tXoSdkFGbVZtoDIwe8');
 
 --
 -- Indexes for dumped tables
@@ -247,43 +252,43 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_mapel`
 --
 ALTER TABLE `tbl_mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_mengajar`
 --
 ALTER TABLE `tbl_mengajar`
-  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables

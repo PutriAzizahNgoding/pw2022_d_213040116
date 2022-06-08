@@ -14,10 +14,9 @@
 		$_SESSION['logged-in'] = true;
 		$_SESSION['nis'] = $row[0]; 
 		$_SESSION['username'] = $row[1];
-		header('Location: halaman_siswa.php?page=dashboard');
+		echo "<script>alert('Berhasil Login!'); window.location.href='halaman_siswa.php?page=dashboard';</script>";
 	}
 	else{
-		$_SESSION['salah'] = 'salah';
-		header('Location: login.php');
+		echo "<script>alert('Gagal Login!'); window.location.href='login.php';</script>";
 	}	
 ?>

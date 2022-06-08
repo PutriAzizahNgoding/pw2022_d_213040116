@@ -29,11 +29,13 @@
 			
 			if($res_jadwal AND $res){
 				$error = 0;
-				header("location:../halaman_admin.php?page=jadwal_mengajar");		
+				echo "<script>alert('Data Berhasil ditambahkan!'); 
+				window.location.href='../halaman_admin.php?page=jadwal_mengajar';</script>";	
 			}				
 		}				
 	}	
 	if($error == 1)
-		header("location:../halaman_admin.php?page=jadwal_mengajar&status=error"); 		
+	echo "<script>alert('Data Gagal ditambahkan!'); 
+	window.location.href='../halaman_admin.php?page=jadwal_mengajar';</script>";		
 	
 ?>

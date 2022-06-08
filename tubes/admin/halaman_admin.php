@@ -62,19 +62,19 @@
                     if(isset($_GET['page'])) {
                         $page = $_GET['page'];
                         switch($page) {
-                        case "dashboard";
+                        case "dashboard":
                             include "dashboard.php";
                             break;
-                        case "guru";
+                        case "guru":
                             include "guru/index.php";
                             break;
-                        case "siswa";
+                        case "siswa":
                             include "siswa/index.php";
                             break;
-                        case "mapel";
+                        case "mapel":
                             include "mapel/index.php";
                             break;
-                        case "kelas";
+                        case "kelas":
                             include "kelas/index.php";
                             break;
                         case "jadwal_mengajar";
@@ -91,7 +91,8 @@
 
         <script type="text/javascript" src="../assets/js/delete_alert.js"></script>
         <script type="text/javascript" src="../assets/js/modal.js"></script>
-        <script src="../assets/js/script.js"></script>
+        <script type="text/javascript" src="../assets/js/script.js"></script>
+
 
     </body>
     </html>

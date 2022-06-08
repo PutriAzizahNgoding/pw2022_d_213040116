@@ -1,16 +1,9 @@
-<!-- Check Status tambah data -->
+
 <?php
-	
+
 	if(!isset($_GET['page'])){
 		include "../session_check.php";
 	}
-
-	if(isset($_POST['status'])){
-		echo "<script>
-		alert('Data Gagal ditambahkan!');
-	</script>";
-	}
-	
 
 
 ?>
@@ -29,14 +22,15 @@
 	<div class="search-box">		
 		<form method="GET" action="" autocomplete="off">
 		<input type="hidden" name="page" value="guru">
-			<input type="text" name="keyword">
-			<button class="button-input" id="myBtn" type="submit" name="cari">
+			<input type="text" name="keyword" >
+			<button class="button-input" id="myBtn" type="submit" name="cari" >
 			<i class="fa fa-search" aria-hidden="true"></i>Cari
 			</button>
 			<br><br>
 		</form>		
 		</div> 
 
+	
 	<table id="list-data" class="display">
 
 		<thead>
@@ -153,6 +147,8 @@
 
 	</table>
 	</div>
+	
+
 
 
 <!-- Modal Input Data -->
@@ -189,4 +185,3 @@
     </div>    
   </div>
 </div>
-<script src="../../assets/js/script.js"></script>

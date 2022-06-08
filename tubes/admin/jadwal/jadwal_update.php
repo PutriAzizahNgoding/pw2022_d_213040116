@@ -16,9 +16,11 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:../halaman_admin.php?page=jadwal_mengajar");		
+		echo "<script>alert('Data berhasil diubah!'); 
+				window.location.href='../halaman_admin.php?page=jadwal_mengajar';</script>";	
 	}
 	else{		
-		header("location:../halaman_admin.php?page=jadwal_mengajar&status=error"); 		
+		echo "<script>alert('Data gagal diubah!'); 
+				window.location.href='../halaman_admin.php?page=jadwal_mengajar';</script>";	
 	}	
 ?>
