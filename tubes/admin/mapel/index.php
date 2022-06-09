@@ -135,7 +135,7 @@
 		<input type="text" id="nama_mapel" name="nama_mapel"  required>
 		<label for="semester">Semester</label>
 		<input type="text" id="semester" name="semester" >			
-		<input type="submit">
+		<input type="submit" value="Tambah">
 	</form>
     </div>    
   </div>

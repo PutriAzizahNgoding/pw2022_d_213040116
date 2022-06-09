@@ -48,8 +48,7 @@ if(empty($username) || empty($password2) || empty($password2) ) {
        </script>";
     }
 
-    // jika username & password sudah sesuai
-    // enkripsi password
+    
     // Insert ke tabel user
     $query = "INSERT INTO tbl_user VALUES(null,'$username','$password')";
     mysqli_query($conn,$query) or die (mysqli_error($conn));

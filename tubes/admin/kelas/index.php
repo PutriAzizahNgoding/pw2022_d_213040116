@@ -127,7 +127,7 @@
 		<input type="text" id="kode_kelas" name="kode_kelas"  required>
 		<label for="nama_kelas">Nama Kelas</label>
 		<input type="text" id="nama_kelas" name="nama_kelas"  required>			
-		<input type="submit">
+		<input type="submit" value="Tambah">
 	</form>
     </div>    
   </div>

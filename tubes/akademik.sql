@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 07:16 PM
+-- Generation Time: Jun 09, 2022 at 12:28 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -75,7 +75,7 @@ INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_guru`, `id_mapel`, `id_kelas`, `hari`
 (29, 28, 2, 1, 'Selasa', '10:30:00', '12:00:00'),
 (30, 8, 13, 1, 'Rabu', '07:00:00', '12:00:00'),
 (31, 2, 11, 1, 'Kamis', '07:00:00', '10:00:00'),
-(32, 25, 16, 1, 'Jumat', '07:00:00', '10:00:00');
+(32, 25, 16, 1, 'Sabtu', '07:00:00', '10:00:00');
 
 -- --------------------------------------------------------
 
@@ -172,7 +172,7 @@ CREATE TABLE `tbl_siswa` (
 
 INSERT INTO `tbl_siswa` (`id_siswa`, `nis`, `nama_siswa`, `jenis_kelamin`, `alamat`, `id_kelas`, `foto_siswa`, `password_siswa`) VALUES
 (13, '1819024367', 'Fitriani', 'wanita', 'Jalan Gerlong', 1, '629dd50204b5e.png', '1234'),
-(16, '1819025361', 'Febri Putra', 'pria', 'Jalan Tamansari', 1, '629dd9998caf8.png', 'febri');
+(16, '1819025361', 'Febriansyah Putra ', 'pria', 'Jalan Tamansari', 1, '629dd9998caf8.png', 'febri');
 
 -- --------------------------------------------------------
 
@@ -192,7 +192,7 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`) VALUES
 (1, 'putri', '123'),
-(23, 'ika', '$2y$10$8DDp8tXoSdkFGbVZtoDIwe8');
+(25, 'admin', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -254,7 +254,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
@@ -266,13 +266,13 @@ ALTER TABLE `tbl_jadwal`
 -- AUTO_INCREMENT for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_mapel`
 --
 ALTER TABLE `tbl_mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_mengajar`
@@ -284,13 +284,13 @@ ALTER TABLE `tbl_mengajar`
 -- AUTO_INCREMENT for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
