@@ -1,4 +1,4 @@
 <?php
-	header("Location: ../tubes/siswa/login.php");
+	header("Location: ../tubes/admin/login.php");
 	die();
 ?>

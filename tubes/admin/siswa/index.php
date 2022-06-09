@@ -175,7 +175,7 @@
 		<input type="radio" name="jenis_kelamin" value="pria"> Pria	<br>
 		<label for="alamat">Alamat</label>
 		<input type="text" id="alamat" name="alamat" placeholder="Alamat Siswa" required>
-        <!-- Data Kelas -->
+      
 		<label for="kelas">Kelas: <input list="kelas" name="kelas" type="text" placeholder="Kelas">
 		</label>
 		<datalist id="kelas">

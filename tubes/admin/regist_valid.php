@@ -50,10 +50,8 @@ if(empty($username) || empty($password2) || empty($password2) ) {
 
     // jika username & password sudah sesuai
     // enkripsi password
-    $password_baru = password_hash($password, PASSWORD_DEFAULT);
     // Insert ke tabel user
-    $query = "INSERT INTO tbl_user VALUES(null,'$username','$password_baru')
-    ";
+    $query = "INSERT INTO tbl_user VALUES(null,'$username','$password')";
     mysqli_query($conn,$query) or die (mysqli_error($conn));
     return mysqli_affected_rows($conn);
 
