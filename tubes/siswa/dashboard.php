@@ -9,12 +9,9 @@ $ambil_hari = date ('w'); // mengambil list hari dari index 0
 $hari = "'".$list_hari[$ambil_hari]."'";
 
 
-
-
-
 ?>
 
-<!-- Tabel Jadwal  -->
+
 <div class="tabel-page">
 	<div class="tabel-heading">
 		Jadwal Kelas Hari ini
@@ -39,7 +36,7 @@ $hari = "'".$list_hari[$ambil_hari]."'";
 				<th><h5>Waktu</h5></th>						
 			</tr>
 		</thead>
-		<!--  untuk mengambil data guru -->
+
 		<?php
 		if(isset($_GET['cari'])) {
 			$keyword = $_GET['keyword'];
@@ -66,7 +63,7 @@ $hari = "'".$list_hari[$ambil_hari]."'";
 			if (mysqli_num_rows($result) > 0) {				
 		    	while($row = mysqli_fetch_assoc($result)) {		    	
 		?>
-			<!-- Menampilkan data guru -->
+		
 		        <tr>
 		        	<td><?php echo $row["nama_guru"];?></td>
 		        	<td><?php echo $row["nama_mapel"];?></td>		        		        

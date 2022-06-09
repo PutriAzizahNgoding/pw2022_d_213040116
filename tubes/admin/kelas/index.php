@@ -1,4 +1,4 @@
-<!-- Check Status tambah data -->
+
 <?php
 	if(!isset($_GET['page'])){
 		include "../session_check.php";
@@ -7,7 +7,7 @@
 
 ?>
 
-<!-- Tabel Data Guru -->
+
 <div class="tabel-page">
 	<div class="tabel-heading">
 		Data Kelas	

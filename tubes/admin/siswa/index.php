@@ -104,7 +104,7 @@
                         <input type="radio" name="jenis_kelamin" value="<?= $row["jenis_kelamin"];?>" > Pria	<br>
                         <label for="alamat">Alamat</label>
                         <input type="text" id="alamat" name="alamat" value="<?= $row["alamat"];?>">
-                            <!-- Data Kelas -->
+                            
                         <label for="kelas">Kelas <input list="kelas" name="kelas" type="text" value="<?php echo $row['id_kelas']?>">
 							</label>
 							<datalist id="kelas" >

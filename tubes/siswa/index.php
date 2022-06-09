@@ -1,11 +1,8 @@
 <?php
-
 	// Cek session
 	if(!isset($_SESSION['logged-in'])){		
 		include "../session_check.php";
 	}
-
-
 
 ?>
 

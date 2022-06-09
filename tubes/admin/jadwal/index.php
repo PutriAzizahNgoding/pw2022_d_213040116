@@ -1,4 +1,4 @@
-<!-- Check Status tambah data -->
+
 <?php
 	if(!isset($_GET['page'])){
 		include "../session_check.php";
@@ -39,7 +39,7 @@
 				<th><h5>Aksi</h5></th>			
 			</tr>
 		</thead>
-		<!-- Kode untuk mengambil data guru -->
+
 		<?php		
 			include "../config/koneksi.php";
 			if(isset($_GET['cari'])){
@@ -101,15 +101,15 @@
 					    </div>
 					    <div class="modal-body">
 					    	<form name="input" method="post" action="jadwal/jadwal_update.php">
-					    		<!-- id_jadwal Sebelumnya -->
+					    	
 						    <input type="hidden" name="id_lama" value="<?php echo $row['id_jadwal']?>">						      	
-						    <!-- Nama guru -->
+						  
 							<label for="id">Nama Guru</label>
 							<input type="text" id="fid" value="<?php echo $row['nama_guru']?>" required>
-							<!-- Nama Mapel -->
+						
 							<label for="nama">Nama Mata Pelajaran</label>
 							<input type="text" id="nama" list="mapel" name="mapel" value="<?php echo $row['id_mapel']?>" required>
-							<!-- Hari -->
+						
 							<label for="fnama">Hari</label>
 							<input type="text" id="fnama" list="hari" name="hari" value="<?php echo $row['hari']?>" required>
 							<datalist id="hari">
@@ -120,7 +120,7 @@
 								<option value="Jumat"></option>
 								<option value="Sabtu"></option>	       									
 							</datalist>
-								<!-- kelas -->
+								
 							<label for="kelas">Kelas <input list="kelas" name="kelas" type="text" value="<?php echo $row['id_kelas']?>">
 							</label>
 							<datalist id="kelas" >
